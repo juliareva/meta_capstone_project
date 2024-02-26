@@ -196,6 +196,10 @@ nav ul li a:hover {
   margin-bottom: 30px;
 }
 
+#reserve-button {
+text-decoration: none;
+color: var(--clr-green);
+}
 
 /* -------  SPECIALS STYLES */
 
@@ -341,6 +345,7 @@ footer {
   text-transform: uppercase;
   padding: 40px 30px;
   color: var(--clr-green);
+  margin-top: auto;
 }
 
 .footer-content {
@@ -375,4 +380,55 @@ footer ul li a:hover {
 
 footer p {
   font-weight: bold;
+  text-align: center;
+}
+
+
+/* -------  RESERVATION STYLES */
+
+.res-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px; 
+  font-family: "Karla-Medium" ;
+  font-size: 14px;
+  line-height: 1.5;
+
+  height: 75vh;
+}
+
+form {
+  padding: 30px;
+  background-color: var(--clr-green);
+  border-radius: 8px;
+  color: var(--clr-white)
+}
+
+.res-info,
+.guest-info
+ {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 15px 0;
+
+}
+
+.res-info > div,
+.guest-info > div {
+  padding: 15px;
+}
+
+
+
+form input,
+form select {
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--clr-grey);
+  margin: 0 10px;
+}
+
+#bookTable {
+  margin-top: 30px;
 }

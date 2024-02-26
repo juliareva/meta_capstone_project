@@ -10,12 +10,12 @@ const Footer = () => {
         <p>Navigation</p>
         <div className='footer-nav-links'>
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="#">Menu</a></li>
         </ul>
         <ul>
-            <li><a href="#">Reservations</a></li>
+            <li><a href="/booking">Reservations</a></li>
             <li><a href="#">Order Online</a></li>
             <li><a href="#">Login</a></li>
         </ul>
@@ -23,23 +23,25 @@ const Footer = () => {
         
         </div>
 
-       <div>
-        <p>Contact Us</p>
-        <ul >
-            <li><a href="#">Address</a></li>
-            <li><a href="#">Phone</a></li>
-            <li><a href="#">E-mail</a></li>
+        <div>
+        <p>Social Media</p>
+        <ul>
+            <li><a href="https://www.instagram.com">Instagram</a></li>
+            <li><a href="https://www.facebook.com#">Facebook</a></li>
+            <li><a href="https://www.twitter.com">Twitter</a></li>
         </ul>
        </div>
 
        <div>
-        <p>Social Media</p>
-        <ul>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Twitter</a></li>
+        <p>Contact Us</p>
+        <ul >
+            <li>123 Main Street, Chicago, IL, USA</li>
+            <li>+1 (555) 123-4567</li>
+            <li>info@littlelemonrestaurant.com</li>
         </ul>
        </div>
+
+       
 
       </div>
     </footer>

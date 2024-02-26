@@ -90,7 +90,7 @@ const Main = () => {
               our culinary artisans are dedicated to delivering an excellent
               dining experience.
             </span>
-            <button className="btn_primary">Reserve a table</button>
+            <button className="btn_primary"><a href="/booking" id="reserve-button">Reserve a table</a></button>
           </div>
           <div className="hero-img">
             <img
@@ -164,7 +164,7 @@ const Main = () => {
         </div>
 
         {/* ABOUT */}
-        <div className="about">
+        <div className="about" id="about">
           <div className="about-description">
             <h2>Little Lemon - Chicago</h2>
             <span className="body-m" style={{ color: "#495E57" }}>
