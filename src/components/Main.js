@@ -82,10 +82,13 @@ const Main = () => {
           <div className="hero-description">
             <h1>Little Lemon</h1>
             <h2>Chicago</h2>
-            <span className="body-m">
+            <span className="body-m" style={{ color: "#495E57" }}>
               Welcome to Little Lemon, where culinary delights meet cozy
               ambiance. Indulge in a journey of exquisite flavors crafted with
-              passion, and savor memorable moments in every bite.
+              passion, and savor memorable moments in every bite. Embrace a
+              unique blend of creativity and tradition at Little Lemon, where
+              our culinary artisans are dedicated to delivering an excellent
+              dining experience.
             </span>
             <button className="btn_primary">Reserve a table</button>
           </div>
@@ -163,9 +166,8 @@ const Main = () => {
         {/* ABOUT */}
         <div className="about">
           <div className="about-description">
-            <h1>Little Lemon</h1>
-            <h2>Chicago</h2>
-            <span>
+            <h2>Little Lemon - Chicago</h2>
+            <span className="body-m" style={{ color: "#495E57" }}>
               Welcome to Little Lemon, where every sip tells a story! Founded
               with a zest for bringing joy and refreshment to life, our journey
               began in a quaint kitchen with a simple idea – to create beverages
@@ -182,7 +184,7 @@ const Main = () => {
             <img
               src={founders}
               alt="Mario and Adrian"
-              style={{ width: "200px" }}
+              style={{ width: "400px" }}
             />
           </div>
         </div>
