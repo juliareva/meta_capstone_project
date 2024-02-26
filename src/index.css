@@ -331,3 +331,48 @@ nav ul li a:hover {
 }
 
 
+/* -------  FOOTER STYLES */
+
+footer {
+  background-color: var(--clr-grey);
+  display: flex;
+  font-family: "Karla-Medium" ;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 40px 30px;
+  color: var(--clr-green);
+}
+
+.footer-content {
+  display: flex;
+  width: 80%;
+  justify-content: space-evenly;
+
+}
+
+.footer-nav-links {
+  display: flex;
+  gap: 50px;
+}
+
+footer ul {
+  list-style-type: none;
+  margin-top: 15px;
+  text-align: center;
+
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: var(--clr-green);
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+footer ul li a:hover {
+  text-decoration: underline;
+}
+
+footer p {
+  font-weight: bold;
+}

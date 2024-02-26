@@ -5,8 +5,10 @@ const Footer = () => {
   return (
     <footer>
        <img src={logo} alt="logo"/>
-       <div>
+       <div className='center footer-content'>
+        <div>
         <p>Navigation</p>
+        <div className='footer-nav-links'>
         <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">About</a></li>
@@ -17,15 +19,19 @@ const Footer = () => {
             <li><a href="#">Order Online</a></li>
             <li><a href="#">Login</a></li>
         </ul>
-       </div>
+        </div>
+        
+        </div>
+
        <div>
         <p>Contact Us</p>
-        <ul>
+        <ul >
             <li><a href="#">Address</a></li>
             <li><a href="#">Phone</a></li>
             <li><a href="#">E-mail</a></li>
         </ul>
        </div>
+
        <div>
         <p>Social Media</p>
         <ul>
@@ -34,6 +40,8 @@ const Footer = () => {
             <li><a href="#">Twitter</a></li>
         </ul>
        </div>
+
+      </div>
     </footer>
   )
 }
