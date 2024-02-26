@@ -2,9 +2,135 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+
+  /* ------- GLOBAL COLORS */
+--clr-green: #495E57;
+--clr-yellow: #F4CE14;
+--clr-black: #000000;
+--clr-white: #FFFFFF;
+--clr-grey: #D9d9d9;
 }
 
-nav {
-  background-color: aqua;
-  display: flex;
+
+/* ------- GLOBAL FONTS */
+@font-face {
+  font-family: "MarkaziText-Medium";   
+  src: local("MarkaziText-Medium"),
+    url("./icons_assets/fonts/MarkaziText-Medium.ttf") format("truetype");
 }
+
+@font-face {
+  font-family: "MarkaziText-Regular";   
+  src: local("MarkaziText-Regular"),
+    url("./icons_assets/fonts/MarkaziText-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Karla-ExtraBold";   
+  src: local("Karla-ExtraBold"),
+    url("./icons_assets/fonts/Karla-ExtraBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Karla-Bold";   
+  src: local("Karla-Bold"),
+    url("./icons_assets/fonts/Karla-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Karla-Medium";   
+  src: local("Karla-Medium"),
+    url("./icons_assets/fonts/Karla-Medium.ttf") format("truetype");
+}
+
+h1 {
+  font-family: "MarkaziText-Medium" ;
+  font-size: 60px;
+}
+
+h2 {
+  font-family: "MarkaziText-Regular" ;
+  font-size: 40px;
+}
+
+h3 {
+  font-family: "Karla-ExtraBold" ;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.heading-m {
+  font-family: "Karla-Medium" ;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.body-m {
+  font-family: "Karla-Medium" ;
+  font-size: 18px;
+}
+
+.body-s {
+  font-family: "Karla-Medium" ;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+
+
+/* ------- BUTTON STYLES */
+
+.btn_primary {
+  border-radius: 16px;
+  background: var(--clr-yellow);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 11px 27px;
+  color: var(--clr-black);
+  font-family: "Karla-Bold" ;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.btn_primary:hover {
+  background-color: var(--clr-white);
+  border: 1px solid var(--clr-yellow);
+}
+
+.btn_primary:active {
+  background-color: var(--clr-yellow);
+  color: var(--clr-black);
+}
+
+
+
+nav {
+  background-color: var(--clr-green);
+  display: flex;
+  font-family: "Karla-Bold" ;
+  font-size: 20px;
+  text-transform: uppercase;
+  padding: 20px 30px;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  list-style-type: none;
+}
+
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--clr-white);
+  cursor: pointer;
+}
+
+nav ul li a:hover {
+  color: var(--clr-yellow);
+}
+
+
+
+
