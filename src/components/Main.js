@@ -82,18 +82,18 @@ const Main = () => {
           <div className="hero-description">
             <h1>Little Lemon</h1>
             <h2>Chicago</h2>
-            <span>
+            <span className="body-m">
               Welcome to Little Lemon, where culinary delights meet cozy
               ambiance. Indulge in a journey of exquisite flavors crafted with
               passion, and savor memorable moments in every bite.
             </span>
-            <button>Reserve a table</button>
+            <button className="btn_primary">Reserve a table</button>
           </div>
           <div className="hero-img">
             <img
               src={restaurantfood}
               alt="restaurant photo"
-              style={{ width: "200px" }}
+              style={{ width: "300px" }}
             />
           </div>
         </div>

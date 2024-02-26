@@ -68,6 +68,7 @@ h3 {
 .body-m {
   font-family: "Karla-Medium" ;
   font-size: 18px;
+  line-height: 1.5;
 }
 
 .body-s {
@@ -89,6 +90,7 @@ h3 {
   font-family: "Karla-Bold" ;
   font-size: 16px;
   line-height: 150%;
+  border: none;
 }
 
 .btn_primary:hover {
@@ -102,6 +104,7 @@ h3 {
 }
 
 
+/* ------- NAVBAR STYLES */
 
 nav {
   background-color: var(--clr-green);
@@ -120,7 +123,6 @@ nav ul {
   list-style-type: none;
 }
 
-
 nav ul li a {
   text-decoration: none;
   color: var(--clr-white);
@@ -132,5 +134,42 @@ nav ul li a:hover {
 }
 
 
+/* ------- MAIN STYLES */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+
+/* ------- HEADER STYLES */
+
+.hero {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: var(--clr-grey);
+  gap: 30px;
+  padding: 50px;
+}
+
+.hero-description {
+  width: 30%;
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.hero-description  span {
+  margin-top: 30px;
+}
+
+.hero-description button {
+  justify-self:end;
+  margin-top: auto;
+  margin-bottom: 30px;
+}
 
