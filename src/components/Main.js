@@ -1,7 +1,7 @@
 import React from "react";
 import restaurantfood from "../icons_assets/restauranfood.jpg";
 import greekSalad from "../icons_assets/greek salad.jpg";
-import bruchetta from "../icons_assets/bruchetta.svg";
+import bruchetta from "../icons_assets/bruschetta.jpg";
 import pasta from "../icons_assets/pasta.jpg";
 
 import photo1 from "../icons_assets/photo1.jpg";
@@ -100,20 +100,27 @@ const Main = () => {
 
         {/* SPECIALS */}
         <div className="specials">
-          <h2>Specials</h2>
-          <button>Online Menu</button>
+          <div className="specials-heading">
+            <h2>Specials</h2>
+            <button className="btn_secondary">Online Menu</button>
+          </div>
           <div className="specials-cards">
             {specialsItems.map((item) => (
               <div key={item.id} className="special-card">
-                <img
-                  src={item.img}
-                  alt={item.name}
-                  style={{ width: "200px" }}
-                />
-                <h3>{item.name}</h3>
-                <h3>{item.price}</h3>
-                <span>{item.description}</span>
-                <button>Order delivery</button>
+                <div className="special-card-img">
+                  <img src={item.img} alt={item.name} id="special-img" />
+                </div>
+
+                <div className="special-card-content">
+                  <div className="card-name-price">
+                    <h4 className="heading-m">{item.name}</h4>
+                    <h4 className="heading-m">{item.price}</h4>
+                  </div>
+                  <span className="body-s">{item.description}</span>
+                </div>
+                <button className="btn_secondary order_delivery">
+                  Order delivery
+                </button>
               </div>
             ))}
           </div>
