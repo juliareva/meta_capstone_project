@@ -128,19 +128,36 @@ const Main = () => {
 
         {/* TESTIMONIALS */}
         <div className="testimonials">
-          <h2>Reviews</h2>
-          {reviews.map((review) => (
-            <div key={review.id} className="testimonials-card">
-              <img
-                src={review.image}
-                alt={review.name}
-                style={{ width: "200px" }}
-              />
-              <h4>{review.name}</h4>
-              <div className="rating">{review.rating}</div>
-              <span>{review.reviewText}</span>
+          <div className="testimonials-container">
+            <h2 style={{ color: "#FFF" }}>Reviews</h2>
+            <div className="testimonials-card-container">
+              {reviews.map((review) => (
+                <div key={review.id} className="testimonials-card">
+                  <div className="testimonials-card-header">
+                    <img
+                      src={review.image}
+                      alt={review.name}
+                      style={{ width: "100px" }}
+                    />
+                    <h4 className="body-m">{review.name}</h4>
+                  </div>
+                  <div className="testimonials-card-body">
+                    <div className="rating">
+                      {Array(review.rating)
+                        .fill()
+                        .map(() => (
+                          <span className="star body-s">&#9733;</span>
+                        ))}
+                    </div>
+
+                    <div className="body-s review-text">
+                      {review.reviewText}
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
 
         {/* ABOUT */}
