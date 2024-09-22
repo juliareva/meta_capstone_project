@@ -3,31 +3,39 @@ import { useNavigate } from "react-router-dom";
 
 import restaurantPhoto from "../icons_assets/restaurant1.jpg";
 
-const Reservation = () => {
-  const seededRandom = function (seed) {
-    var m = 2 ** 35 - 31;
-    var a = 185852;
-    var s = seed % m;
-    return function () {
-      return (s = (s * a) % m) / m;
-    };
+const seededRandom = function (seed) {
+  var m = 2 ** 35 - 31;
+  var a = 185852;
+  var s = seed % m;
+  return function () {
+    return (s = (s * a) % m) / m;
   };
+};
 
-  const fetchAPI = function (date) {
-    let result = [];
-    let random = seededRandom(date.getDate());
+const fetchAPI = function (date) {
+  let result = [];
+  let random = seededRandom(date.getDate());
 
-    for (let i = 17; i <= 23; i++) {
-      if (random() < 0.5) {
-        result.push(i + ":00");
-      }
-      if (random() < 0.5) {
-        result.push(i + ":30");
-      }
+  for (let i = 17; i <= 23; i++) {
+    if (random() < 0.5) {
+      result.push(i + ":00");
     }
-    return result;
-  };
+    if (random() < 0.5) {
+      result.push(i + ":30");
+    }
+  }
+  return result;
+};
 
+export const initializeTimes = () => {
+  return fetchAPI(new Date());
+};
+
+export const updateTimes = (targetDay) => {
+  return fetchAPI(new Date(targetDay));
+};
+
+const Reservation = () => {
   const submitAPI = function (formData) {
     return true;
   };
@@ -48,11 +56,11 @@ const Reservation = () => {
 
   const handleDateChange = (event) => {
     setCurrDate(event.target.value);
-    setAvailTime(fetchAPI(new Date(event.target.value)));
+    setAvailTime(updateTimes(event.target.value));
   };
 
   useEffect(() => {
-    setAvailTime(fetchAPI(new Date()));
+    setAvailTime(initializeTimes());
   }, []);
 
   // SUBMITTING FORM
