@@ -4,80 +4,77 @@
   padding: 0;
 
   /* ------- GLOBAL COLORS */
---clr-green: #495E57;
---clr-yellow: #F4CE14;
---clr-black: #000000;
---clr-white: #FFFFFF;
---clr-grey: #D9d9d9;
+  --clr-green: #495e57;
+  --clr-yellow: #f4ce14;
+  --clr-black: #000000;
+  --clr-white: #ffffff;
+  --clr-grey: #d9d9d9;
 }
-
 
 /* ------- GLOBAL FONTS */
 @font-face {
-  font-family: "MarkaziText-Medium";   
+  font-family: "MarkaziText-Medium";
   src: local("MarkaziText-Medium"),
     url("./icons_assets/fonts/MarkaziText-Medium.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "MarkaziText-Regular";   
+  font-family: "MarkaziText-Regular";
   src: local("MarkaziText-Regular"),
     url("./icons_assets/fonts/MarkaziText-Regular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "Karla-ExtraBold";   
+  font-family: "Karla-ExtraBold";
   src: local("Karla-ExtraBold"),
     url("./icons_assets/fonts/Karla-ExtraBold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "Karla-Bold";   
+  font-family: "Karla-Bold";
   src: local("Karla-Bold"),
     url("./icons_assets/fonts/Karla-Bold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "Karla-Medium";   
+  font-family: "Karla-Medium";
   src: local("Karla-Medium"),
     url("./icons_assets/fonts/Karla-Medium.ttf") format("truetype");
 }
 
 h1 {
-  font-family: "MarkaziText-Medium" ;
+  font-family: "MarkaziText-Medium";
   font-size: 60px;
 }
 
 h2 {
-  font-family: "MarkaziText-Regular" ;
+  font-family: "MarkaziText-Regular";
   font-size: 40px;
 }
 
 h3 {
-  font-family: "Karla-ExtraBold" ;
+  font-family: "Karla-ExtraBold";
   font-size: 20px;
   text-transform: uppercase;
 }
 
 .heading-m {
-  font-family: "Karla-Medium" ;
+  font-family: "Karla-Medium";
   font-size: 18px;
   font-weight: bold;
 }
 
 .body-m {
-  font-family: "Karla-Medium" ;
+  font-family: "Karla-Medium";
   font-size: 18px;
   line-height: 1.5;
 }
 
 .body-s {
-  font-family: "Karla-Medium" ;
+  font-family: "Karla-Medium";
   font-size: 16px;
   line-height: 1.5;
 }
-
-
 
 /* ------- BUTTON STYLES */
 
@@ -87,7 +84,7 @@ h3 {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   padding: 11px 27px;
   color: var(--clr-black);
-  font-family: "Karla-Bold" ;
+  font-family: "Karla-Bold";
   font-size: 16px;
   line-height: 150%;
   border: none;
@@ -109,7 +106,7 @@ h3 {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   padding: 11px 27px;
   color: var(--clr-white);
-  font-family: "Karla-Bold" ;
+  font-family: "Karla-Bold";
   font-size: 16px;
   line-height: 150%;
   border: none;
@@ -118,7 +115,7 @@ h3 {
 .btn_secondary:hover {
   background-color: var(--clr-white);
   border: 1px solid var(--clr-green);
-  color: var(--clr-green)
+  color: var(--clr-green);
 }
 
 .btn_secondary:active {
@@ -126,13 +123,12 @@ h3 {
   color: var(--clr-white);
 }
 
-
 /* ------- NAVBAR STYLES */
 
 nav {
   background-color: var(--clr-green);
   display: flex;
-  font-family: "Karla-Bold" ;
+  font-family: "Karla-Bold";
   font-size: 20px;
   text-transform: uppercase;
   padding: 20px 30px;
@@ -156,14 +152,12 @@ nav ul li a:hover {
   color: var(--clr-yellow);
 }
 
-
 /* ------- MAIN STYLES */
 .main-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 
 /* ------- HEADER STYLES */
 
@@ -186,19 +180,19 @@ nav ul li a:hover {
   justify-content: space-between;
 }
 
-.hero-description  span {
+.hero-description span {
   margin-top: 30px;
 }
 
 .hero-description button {
-  justify-self:end;
+  justify-self: end;
   margin-top: auto;
   margin-bottom: 30px;
 }
 
 #reserve-button {
-text-decoration: none;
-color: var(--clr-green);
+  text-decoration: none;
+  color: var(--clr-green);
 }
 
 /* -------  SPECIALS STYLES */
@@ -210,7 +204,6 @@ color: var(--clr-green);
   align-items: center;
   padding: 30px;
   margin: 20px 0;
-
 }
 
 .specials-heading {
@@ -236,12 +229,11 @@ color: var(--clr-green);
   align-items: flex-start;
   background-color: var(--clr-grey);
   border-radius: 8px;
-
 }
 
 #special-img {
   width: 100%;
-  }
+}
 
 .special-card-content {
   display: flex;
@@ -249,15 +241,15 @@ color: var(--clr-green);
   justify-content: space-between;
   align-items: flex-start;
   padding: 15px;
-  }
-  
+}
+
 .card-name-price {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
-    font-weight: bold;
-    width: 100%;
-  }
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-weight: bold;
+  width: 100%;
+}
 
 .special-card button {
   margin-bottom: 15px;
@@ -286,14 +278,13 @@ color: var(--clr-green);
 .testimonials-card-container {
   padding: 30px 0;
   width: 100%;
-  display: grid; 
+  display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 20px; 
-
+  grid-gap: 20px;
 }
 
 .testimonials-card {
- border-radius: 8px;
+  border-radius: 8px;
   background-color: var(--clr-grey);
   padding: 25px;
   display: flex;
@@ -332,16 +323,15 @@ color: var(--clr-green);
   width: 30%;
   display: flex;
   flex-direction: column;
- gap: 20px;
+  gap: 20px;
 }
-
 
 /* -------  FOOTER STYLES */
 
 footer {
   background-color: var(--clr-grey);
   display: flex;
-  font-family: "Karla-Medium" ;
+  font-family: "Karla-Medium";
   font-size: 14px;
   text-transform: uppercase;
   padding: 40px 30px;
@@ -353,7 +343,6 @@ footer {
   display: flex;
   width: 80%;
   justify-content: space-evenly;
-
 }
 
 .footer-nav-links {
@@ -365,7 +354,6 @@ footer ul {
   list-style-type: none;
   margin-top: 15px;
   text-align: center;
-
 }
 
 footer ul li a {
@@ -384,15 +372,14 @@ footer p {
   text-align: center;
 }
 
-
 /* -------  RESERVATION STYLES */
 
 .res-page {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px; 
-  font-family: "Karla-Medium" ;
+  gap: 30px;
+  font-family: "Karla-Medium";
   font-size: 14px;
   line-height: 1.5;
 
@@ -403,24 +390,20 @@ form {
   padding: 30px;
   background-color: var(--clr-green);
   border-radius: 8px;
-  color: var(--clr-white)
+  color: var(--clr-white);
 }
 
 .res-info,
-.guest-info
- {
+.guest-info {
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin: 15px 0;
-
 }
 
 .res-info > div,
 .guest-info > div {
   padding: 15px;
 }
-
-
 
 form input,
 form select {
@@ -432,4 +415,53 @@ form select {
 
 #bookTable {
   margin-top: 30px;
+}
+
+/* ConfirmationPage.css */
+
+.confirmation-page {
+  min-height: 70vh; /* Full width */
+}
+
+.confirmation-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.confirmation-container h1 {
+  color: var(--clr-green);
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.confirmation-container p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.confirmation-container ul {
+  list-style-type: none;
+  padding: 0;
+  font-size: 18px;
+  text-align: center;
+  display: inline-block;
+}
+
+.confirmation-container li {
+  margin: 10px 0;
+}
+
+.confirmation-container strong {
+  width: 100px;
+  display: inline-block;
+  text-align: right;
+  margin-right: 10px;
+  color: #555;
 }

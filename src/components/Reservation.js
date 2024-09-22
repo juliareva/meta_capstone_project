@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import restaurantPhoto from "../icons_assets/restaurant1.jpg";
 
@@ -26,12 +27,16 @@ const Reservation = () => {
     }
     return result;
   };
+
   const submitAPI = function (formData) {
     return true;
   };
 
+  // CHECKING AVAILABLE TIME FOR SELECTED DATE
   const [availTime, setAvailTime] = useState([]);
   const [currDate, setCurrDate] = useState(getDate());
+  const [formData, setFormData] = useState({});
+  const navigate = useNavigate();
 
   function getDate() {
     const today = new Date();
@@ -50,6 +55,14 @@ const Reservation = () => {
     setAvailTime(fetchAPI(new Date()));
   }, []);
 
+  // SUBMITTING FORM
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (submitAPI(formData)) {
+      navigate("/booking_confirmed");
+    }
+  };
+
   return (
     <div className="res-page">
       <img
@@ -60,7 +73,7 @@ const Reservation = () => {
       <div className="res-container">
         <h2>Book a table at Little Lemon Chicago</h2>
 
-        <form>
+        <form onSubmit={handleSubmit}>
           <h4 className="heading-m" style={{ color: "#F4CE14" }}>
             Reservation Details
           </h4>
