@@ -90,7 +90,11 @@ const Main = () => {
               our culinary artisans are dedicated to delivering an excellent
               dining experience.
             </span>
-            <button className="btn_primary"><a href="/booking" id="reserve-button">Reserve a table</a></button>
+            <button className="btn_primary">
+              <a href="/booking" id="reserve-button">
+                Reserve a table
+              </a>
+            </button>
           </div>
           <div className="hero-img">
             <img

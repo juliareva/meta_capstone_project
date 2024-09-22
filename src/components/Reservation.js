@@ -1,8 +1,55 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import restaurantPhoto from "../icons_assets/restaurant1.jpg";
 
 const Reservation = () => {
+  const seededRandom = function (seed) {
+    var m = 2 ** 35 - 31;
+    var a = 185852;
+    var s = seed % m;
+    return function () {
+      return (s = (s * a) % m) / m;
+    };
+  };
+
+  const fetchAPI = function (date) {
+    let result = [];
+    let random = seededRandom(date.getDate());
+
+    for (let i = 17; i <= 23; i++) {
+      if (random() < 0.5) {
+        result.push(i + ":00");
+      }
+      if (random() < 0.5) {
+        result.push(i + ":30");
+      }
+    }
+    return result;
+  };
+  const submitAPI = function (formData) {
+    return true;
+  };
+
+  const [availTime, setAvailTime] = useState([]);
+  const [currDate, setCurrDate] = useState(getDate());
+
+  function getDate() {
+    const today = new Date();
+    const month = (today.getMonth() + 1).toString().padStart(2, "0");
+    const year = today.getFullYear();
+    const day = today.getDate();
+    return `${year}-${month}-${day}`;
+  }
+
+  const handleDateChange = (event) => {
+    setCurrDate(event.target.value);
+    setAvailTime(fetchAPI(new Date(event.target.value)));
+  };
+
+  useEffect(() => {
+    setAvailTime(fetchAPI(new Date()));
+  }, []);
+
   return (
     <div className="res-page">
       <img
@@ -21,23 +68,21 @@ const Reservation = () => {
           <div className="res-info">
             <div>
               <label htmlFor="res-date">Choose date*</label>
-              <input type="date" id="res-date" required />
+              <input
+                type="date"
+                id="res-date"
+                value={currDate}
+                onChange={handleDateChange}
+                required
+              />
             </div>
 
             <div>
               <label htmlFor="res-time">Choose time*</label>
               <select id="res-time" required>
-                <option>17:00</option>
-                <option>17:30</option>
-                <option>18:00</option>
-                <option>18:30</option>
-                <option>19:00</option>
-                <option>19:30</option>
-                <option>20:00</option>
-                <option>20:30</option>
-                <option>21:00</option>
-                <option>21:30</option>
-                <option>22:00</option>
+                {availTime.map((time) => {
+                  return <option>{time}</option>;
+                })}
               </select>
             </div>
 
@@ -72,7 +117,7 @@ const Reservation = () => {
             </div>
 
             <div>
-              <label htmlFor="res-lastname">First Name*</label>
+              <label htmlFor="res-lastname">Last Name*</label>
               <input type="text" id="res-lastname" required />
             </div>
 
