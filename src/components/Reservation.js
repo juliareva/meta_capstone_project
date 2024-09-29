@@ -35,6 +35,22 @@ export const updateTimes = (targetDay) => {
   return fetchAPI(new Date(targetDay));
 };
 
+export const isFormDataValid = (formData) => {
+  if (
+    formData.date &&
+    formData.time &&
+    formData.guests > 0 &&
+    formData.firstname &&
+    formData.lastname &&
+    formData.email &&
+    formData.phone
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
 const Reservation = () => {
   const submitAPI = function (formData) {
     return true;
@@ -55,14 +71,7 @@ const Reservation = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const isValid =
-      formData.date &&
-      formData.time &&
-      formData.guests > 0 &&
-      formData.firstname &&
-      formData.lastname &&
-      formData.email &&
-      formData.phone;
+    const isValid = isFormDataValid(formData);
     setIsFormValid(isValid);
   }, [formData]);
 
