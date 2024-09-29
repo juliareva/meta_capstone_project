@@ -122,6 +122,7 @@ const Reservation = () => {
                 value={currDate}
                 onChange={handleDateChange}
                 required
+                data-testid="date-input-testid"
               />
             </div>
 
@@ -130,6 +131,7 @@ const Reservation = () => {
               <select
                 id="time"
                 required
+                data-testid="time-input-testid"
                 onChange={handleChange}
                 value={formData.time}
               >
@@ -149,6 +151,7 @@ const Reservation = () => {
                 id="guests"
                 value={formData.guests}
                 required
+                data-testid="guests-input-testid"
                 onChange={handleChange}
               />
             </div>
@@ -172,6 +175,7 @@ const Reservation = () => {
                 type="text"
                 id="firstname"
                 required
+                data-testid="first-name-input-testid"
                 value={formData.firstname}
                 onChange={handleChange}
               />
@@ -183,6 +187,7 @@ const Reservation = () => {
                 type="text"
                 id="lastname"
                 required
+                data-testid="last-name-input-testid"
                 value={formData.lastname}
                 onChange={handleChange}
               />
@@ -194,6 +199,7 @@ const Reservation = () => {
                 type="text"
                 id="phone"
                 required
+                data-testid="phone-input-testid"
                 onChange={handleChange}
                 value={formData.phone}
               />
@@ -203,6 +209,7 @@ const Reservation = () => {
               {" "}
               <label htmlFor="email">Your Email*</label>
               <input
+                data-testid="email-input-testid"
                 type="email"
                 id="email"
                 required
