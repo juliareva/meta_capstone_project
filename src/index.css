@@ -92,12 +92,17 @@ h3 {
 
 .btn_primary:hover {
   background-color: var(--clr-white);
-  border: 1px solid var(--clr-yellow);
 }
 
 .btn_primary:active {
   background-color: var(--clr-yellow);
   color: var(--clr-black);
+}
+
+.btn_primary:disabled {
+  background-color: #d3d3d3;
+  color: #7a7a7a;
+  cursor: not-allowed;
 }
 
 .btn_secondary {

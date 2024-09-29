@@ -40,11 +40,31 @@ const Reservation = () => {
     return true;
   };
 
-  // CHECKING AVAILABLE TIME FOR SELECTED DATE
   const [availTime, setAvailTime] = useState([]);
   const [currDate, setCurrDate] = useState(getDate());
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState({
+    date: getDate(),
+    time: "",
+    guests: 1,
+    firstname: "",
+    lastname: "",
+    phone: "",
+    email: "",
+  });
+  const [isFormValid, setIsFormValid] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const isValid =
+      formData.date &&
+      formData.time &&
+      formData.guests > 0 &&
+      formData.firstname &&
+      formData.lastname &&
+      formData.email &&
+      formData.phone;
+    setIsFormValid(isValid);
+  }, [formData]);
 
   function getDate() {
     const today = new Date();
@@ -55,13 +75,20 @@ const Reservation = () => {
   }
 
   const handleDateChange = (event) => {
-    setCurrDate(event.target.value);
-    setAvailTime(updateTimes(event.target.value));
+    const selectedDate = event.target.value;
+    setCurrDate(selectedDate);
+    setAvailTime(updateTimes(selectedDate));
+    setFormData({ ...formData, date: selectedDate });
   };
 
   useEffect(() => {
     setAvailTime(initializeTimes());
   }, []);
+
+  const handleChange = (event) => {
+    const { id, value } = event.target;
+    setFormData({ ...formData, [id]: value });
+  };
 
   // SUBMITTING FORM
   const handleSubmit = (event) => {
@@ -88,10 +115,10 @@ const Reservation = () => {
 
           <div className="res-info">
             <div>
-              <label htmlFor="res-date">Choose date*</label>
+              <label htmlFor="date">Choose date*</label>
               <input
                 type="date"
-                id="res-date"
+                id="date"
                 value={currDate}
                 onChange={handleDateChange}
                 required
@@ -99,8 +126,13 @@ const Reservation = () => {
             </div>
 
             <div>
-              <label htmlFor="res-time">Choose time*</label>
-              <select id="res-time" required>
+              <label htmlFor="time">Choose time*</label>
+              <select
+                id="time"
+                required
+                onChange={handleChange}
+                value={formData.time}
+              >
                 {availTime.map((time) => {
                   return <option>{time}</option>;
                 })}
@@ -115,13 +147,15 @@ const Reservation = () => {
                 min="1"
                 max="10"
                 id="guests"
+                value={formData.guests}
                 required
+                onChange={handleChange}
               />
             </div>
 
             <div>
               <label htmlFor="preference">Preference</label>
-              <select id="preference">
+              <select id="preference" onChange={handleChange}>
                 <option>Inside</option>
                 <option>Outside</option>
               </select>
@@ -133,24 +167,48 @@ const Reservation = () => {
           </h4>
           <div className="guest-info">
             <div>
-              <label htmlFor="res-firstname">First Name*</label>
-              <input type="text" id="res-firstname" required />
+              <label htmlFor="firstname">First Name*</label>
+              <input
+                type="text"
+                id="firstname"
+                required
+                value={formData.firstname}
+                onChange={handleChange}
+              />
             </div>
 
             <div>
-              <label htmlFor="res-lastname">Last Name*</label>
-              <input type="text" id="res-lastname" required />
+              <label htmlFor="lastname">Last Name*</label>
+              <input
+                type="text"
+                id="lastname"
+                required
+                value={formData.lastname}
+                onChange={handleChange}
+              />
             </div>
 
             <div>
-              <label htmlFor="res-phone">Your Phone*</label>
-              <input type="text" id="res-name" required />
+              <label htmlFor="phone">Your Phone*</label>
+              <input
+                type="text"
+                id="phone"
+                required
+                onChange={handleChange}
+                value={formData.phone}
+              />
             </div>
 
             <div>
               {" "}
-              <label htmlFor="res-email">Your Email*</label>
-              <input type="email" id="res-name" required />
+              <label htmlFor="email">Your Email*</label>
+              <input
+                type="email"
+                id="email"
+                required
+                onChange={handleChange}
+                value={formData.email}
+              />
             </div>
           </div>
 
@@ -159,6 +217,7 @@ const Reservation = () => {
             value="Book a table"
             className="btn_primary"
             id="bookTable"
+            disabled={!isFormValid}
           />
         </form>
       </div>
